@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/hello', [WelcomeController::class, 'hello']);
+Route::get('/index', [PageController::class, 'index']);
+Route::get('/articles/{id}', [PageController::class, 'articles']);
