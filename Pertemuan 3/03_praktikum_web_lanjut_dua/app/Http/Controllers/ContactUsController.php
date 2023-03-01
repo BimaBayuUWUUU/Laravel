@@ -30,9 +30,9 @@ class ContactUsController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required'
+            'message' => 'required'
         ]);
-        return redirect()->route('contact-us.index')->with('sukses', 'Halo ' . $request->name . ', Kontak Anda Berhasil Di Tambahkan');
+        return redirect()->route('contact-us.index')->with('sukses', 'Halo ' . $request->name . ', Pesan anda Berhasil Dikirim');
     }
 
     /**

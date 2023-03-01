@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\PortofolioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,27 +19,23 @@ use App\Http\Controllers\AboutUsController;
 
 Route::get('/home', HomeController::class);
 
-Route::prefix('product')->group(function () {
-    Route::get('/{params}', function (string $params) {
-        return view('product', [
-            'params' => $params
-        ]);
-    });
+Route::prefix('portofolio')->group(function () {
+    Route::get('/', [PortofolioController::class, 'index']);
 });
 
-Route::get('/news/{params}', function (string $params) {
-    return view('news', [
-        'params' => $params
-    ]);
-});
+// Route::get('/news/{params}', function (string $params) {
+//     return view('news', [
+//         'params' => $params
+//     ]);
+// });
 
-Route::prefix('program')->group(function () {
-    Route::get('/{params}', function (string $params) {
-        return view('program', [
-            'params' => $params
-        ]);
-    });
-});
+// Route::prefix('program')->group(function () {
+//     Route::get('/{params}', function (string $params) {
+//         return view('program', [
+//             'params' => $params
+//         ]);
+//     });
+// });
 
 Route::get('/about-us', AboutUsController::class);
 
