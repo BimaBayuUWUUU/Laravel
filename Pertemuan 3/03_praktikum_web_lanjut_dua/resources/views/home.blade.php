@@ -1,3 +1,2 @@
-<html>
-    <h1>Home Bimbay</h1>
-</html>
+@extends('layouts.template')
+@section('title', 'Home')

@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AboutUs;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutUsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +16,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/home', HomeController::class);
 
 Route::prefix('product')->group(function () {
     Route::get('/{params}', function (string $params) {
@@ -38,8 +40,6 @@ Route::prefix('program')->group(function () {
     });
 });
 
-Route::get('/about-us', function () {
-    return view('about-us');
-});
+Route::get('/about-us', AboutUsController::class);
 
 Route::resource('contact-us', ContactUSController::class)->only(['index', 'store']);
