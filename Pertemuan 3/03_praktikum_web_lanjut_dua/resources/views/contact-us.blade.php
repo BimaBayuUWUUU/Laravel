@@ -21,14 +21,11 @@
                         laoreet. Dolore magna aliquam erat volutpat.</p>
                 </div>
                 <div class="col-md-8 col-sm-8 mt30">
-                    @if(session('sukses'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Success!</strong> {{ session('sukses') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
-                <form action="{{route('contact-us.store')}}" method="post">
-                    @csrf
+                    @if (session('sukses'))
+                        <div class="alert alert-success" role="alert">{{ session('sukses') }}</div>
+                    @endif
+                    <form action="{{ route('contact-us.store') }}" method="post">
+                        @csrf
                         <div class="col-md-6 col-sm-6">
                             <label for="name">NAME</label>
                             <input name="name" type="text" class="form-control" id="name">

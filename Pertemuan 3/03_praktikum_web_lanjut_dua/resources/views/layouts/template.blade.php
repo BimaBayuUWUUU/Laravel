@@ -32,6 +32,7 @@ http://www.templatemo.com/tm-468-onetel
 	</div>
 
 	@yield('content')
+	
 	<!-- footer section -->
 	<footer>
 		<div class="container">
