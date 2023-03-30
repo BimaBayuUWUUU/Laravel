@@ -22,7 +22,8 @@
                 </div>
                 <div class="col-md-8 col-sm-8 mt30">
                     @if (session('sukses'))
-                        <div class="alert alert-success" role="alert">{{ session('sukses') }}</div>
+                        <div class="alert alert-success alert-dismissible show" role="alert">{{ session('sukses') }}
+                    </div>
                     @endif
                     <form action="{{ route('contact-us.store') }}" method="post">
                         @csrf
