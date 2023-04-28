@@ -12,13 +12,19 @@ class MahasiswaController extends Controller
      * @return \Illuminate\Http\Response
 
      */
-    public function index()
+    public function index(Request $request)
     {
         //fungsi eloquent menampilkan data menggunakan pagination
-        $mahasiswas = Mahasiswa::all(); // Mengambil semua isi tabel
-        $posts = Mahasiswa::orderBy('Nim', 'desc')->paginate(6);
-        return view('mahasiswas.index', compact('mahasiswas'));
-        with('i', (request()->input('page', 1) - 1) * 5);
+        $keyword = $request->input('Nama');
+
+        if ($keyword) {
+            $mahasiswas = Mahasiswa::where('Nama', 'like', '%' . $keyword . '%')->paginate(5);
+        } else {
+            $mahasiswas = Mahasiswa::paginate(5);
+        }
+
+
+        return view('mahasiswas.index', ['mahasiswas' => $mahasiswas]);
     }
     public function create()
     {
@@ -48,7 +54,11 @@ class MahasiswaController extends Controller
     {
         //menampilkan detail data dengan menemukan/berdasarkan Nim Mahasiswa
         $Mahasiswa = Mahasiswa::find($Nim);
-        return view('mahasiswas.detail', compact('Mahasiswa'));
+        if (!$Mahasiswa) {
+            abort(404);
+        }
+        $nextMahasiswa = Mahasiswa::where('nim', '>', $Mahasiswa->nim)->first();
+        return view('mahasiswas.detail', compact('Mahasiswa', 'nextMahasiswa'));
     }
 
     public function edit($nim)

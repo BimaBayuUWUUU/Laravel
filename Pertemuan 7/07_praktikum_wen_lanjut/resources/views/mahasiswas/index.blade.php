@@ -51,4 +51,19 @@
             </tr>
         @endforeach
     </table>
+
+{{--    {{ $mahasiswas->links()}}--}}
+
+    <!-- a Tag for previous page -->
+    <a class="btn btn-primary" href="{{$mahasiswas->previousPageUrl()}}">
+        Previous
+    </a>
+    @for($i=1;$i<=$mahasiswas->lastPage();$i++)
+        <!-- a Tag for another page -->
+        <a href="{{$mahasiswas->url($i)}}">{{$i}}</a>
+    @endfor
+    <!-- a Tag for next page -->
+    <a class="btn btn-primary" href="{{$mahasiswas->nextPageUrl()}}">
+        Next
+    </a>
 @endsection
