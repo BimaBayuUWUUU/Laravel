@@ -14,7 +14,7 @@ class UserBaruSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert([
+        DB::table('mahasiswas')->insert([
             'username' => 'admin',
             'name' => 'Administrator Baru',
             'email' => 'admin.baru@admin.com',

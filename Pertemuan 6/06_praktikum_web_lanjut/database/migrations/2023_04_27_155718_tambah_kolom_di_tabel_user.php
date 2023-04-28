@@ -11,7 +11,7 @@ class TambahKolomDiTabelUser extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('mahasiswas', function (Blueprint $table) {
             $table->string('username',20)->after('id')->nullable()->unique();
         });
     }
@@ -21,7 +21,7 @@ class TambahKolomDiTabelUser extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('mahasiswas', function (Blueprint $table) {
             $table->dropColumn('username');
         });
     }
