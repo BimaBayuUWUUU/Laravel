@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PHPUnit">
+    <option name="directories">
+      <list>
+        <option value="$PROJECT_DIR$/Pertemuan 2/02_praktikum_web_lanjut_satu/tests/Unit" />
+        <option value="$PROJECT_DIR$/Pertemuan 2/02_praktikum_web_lanjut_satu/tests/Feature" />
+        <option value="$PROJECT_DIR$/Pertemuan 2/02_praktikum_web_lanjut_company/tests/Unit" />
+        <option value="$PROJECT_DIR$/Pertemuan 2/02_praktikum_web_lanjut_company/tests/Feature" />
+        <option value="$PROJECT_DIR$/Pertemuan 4/tests/Unit" />
+        <option value="$PROJECT_DIR$/Pertemuan 4/tests/Feature" />
+      </list>
+    </option>
+  </component>
+</project>
