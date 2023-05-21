@@ -41,12 +41,12 @@
             <th>Tanggal_Lahir</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($mahasiswas as $Mahasiswa)
+        @foreach ($paginate as $Mahasiswa)
             <tr>
 
                 <td>{{ $Mahasiswa->nim }}</td>
                 <td>{{ $Mahasiswa->nama }}</td>
-                <td>{{ $Mahasiswa->kelas }}</td>
+                <td>{{ $Mahasiswa->kelas->nama_kelas}}</td>
                 <td>{{ $Mahasiswa->jurusan }}</td>
                 <td>{{ $Mahasiswa->no_handphone }}</td>
                 <td>{{ $Mahasiswa->email }}</td>
@@ -68,15 +68,15 @@
 {{--    {{ $mahasiswas->links()}}--}}
 
     <!-- a Tag for previous page -->
-    <a class="btn btn-primary" href="{{$mahasiswas->previousPageUrl()}}">
+    <a class="btn btn-primary" href="{{$paginate->previousPageUrl()}}">
         Previous
     </a>
-    @for($i=1;$i<=$mahasiswas->lastPage();$i++)
+    @for($i=1;$i<=$paginate->lastPage();$i++)
         <!-- a Tag for another page -->
-        <a href="{{$mahasiswas->url($i)}}">{{$i}}</a>
+        <a href="{{$paginate->url($i)}}">{{$i}}</a>
     @endfor
     <!-- a Tag for next page -->
-    <a class="btn btn-primary" href="{{$mahasiswas->nextPageUrl()}}">
+    <a class="btn btn-primary" href="{{$paginate->nextPageUrl()}}">
         Next
     </a>
 @endsection
