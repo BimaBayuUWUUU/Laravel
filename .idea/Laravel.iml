@@ -8,12 +8,14 @@
       <sourceFolder url="file://$MODULE_DIR$/Pertemuan 4/tests/Unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/Pertemuan 2/02_praktikum_web_lanjut_company/tests/Feature" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/Pertemuan 2/02_praktikum_web_lanjut_company/tests/Unit" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/Pertemuan 3/03_praktikum_web_lanjut_dua/app" isTestSource="false" packagePrefix="App\" />
-      <sourceFolder url="file://$MODULE_DIR$/Pertemuan 3/03_praktikum_web_lanjut_dua/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
-      <sourceFolder url="file://$MODULE_DIR$/Pertemuan 3/03_praktikum_web_lanjut_dua/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
-      <sourceFolder url="file://$MODULE_DIR$/Pertemuan 3/03_praktikum_web_lanjut_dua/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/Pertemuan 3/03_praktikum_web_lanjut_dua/tests/Feature" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/Pertemuan 3/03_praktikum_web_lanjut_dua/tests/Unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/Pertemuan 3/03_praktikum_web_lanjut_satu/tests/Feature" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/Pertemuan 3/03_praktikum_web_lanjut_satu/tests/Unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/Pertemuan 2/02_praktikum_web_lanjut_satu/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/Pertemuan 2/02_praktikum_web_lanjut_satu/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
+      <sourceFolder url="file://$MODULE_DIR$/Pertemuan 2/02_praktikum_web_lanjut_satu/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/Pertemuan 2/02_praktikum_web_lanjut_satu/tests" isTestSource="true" packagePrefix="Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/Pertemuan 2/02_praktikum_web_lanjut_company/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/Pertemuan 2/02_praktikum_web_lanjut_company/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/Pertemuan 2/02_praktikum_web_lanjut_company/vendor/dflydev/dot-access-data" />
