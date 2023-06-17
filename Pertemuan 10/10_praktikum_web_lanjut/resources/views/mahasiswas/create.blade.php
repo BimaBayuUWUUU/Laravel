@@ -20,7 +20,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="post" action="{{ route('mahasiswas.store') }}" id="myForm">
+                    <form method="post" action="{{ route('mahasiswas.store') }}" id="myForm" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="nim">Nim</label>
@@ -34,6 +34,7 @@
                         <div class="form-group">
                             <label for="kelas">Kelas</label>
                             <select name="kelas" class="form-control">
+                                <option value="">Pilih Kelas</option>
                                 @foreach($kelas as $kls)
                                     <option value="{{$kls->id}}">{{$kls->nama_kelas}}</option>
                                 @endforeach
@@ -59,6 +60,10 @@
                             <label for="tanggal_lahir">Tanggal_Lahir</label>
                             <input type="tanggal_lahir" name="tanggal_lahir" class="form-control" id="tanggal_lahir"
                                    aria-describedby="tanggal_lahir">
+                        </div>
+                        <div class="form-group">
+                            <label for="Foto">Foto Profil</label>
+                            <input type="file" name="Foto" class="form-control" id="Foto" aria-describedby="Foto">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

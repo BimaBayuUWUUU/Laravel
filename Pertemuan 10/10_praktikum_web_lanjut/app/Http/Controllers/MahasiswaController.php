@@ -47,6 +47,7 @@ class MahasiswaController extends Controller
             'kelas' => 'required',
             'jurusan' => 'required',
             'no_handphone' => 'required',
+
         ]);
 //        //fungsi eloquent untuk menambah data
 //        Mahasiswa::create($request->all());
@@ -60,10 +61,17 @@ class MahasiswaController extends Controller
         $mahasiswa->no_handphone = $request->get('no_handphone');
         $mahasiswa->email = $request->get('email');
         $mahasiswa->tanggal_lahir = $request->get('tanggal_lahir');
+        if ($request->hasFile('Foto')) {
+            $extension = $request->file('Foto')->getClientOriginalExtension();
+            $request->file('Foto')->move('storage/images/', $mahasiswa->nama . '.' . $extension);
+            $mahasiswa->image_profile = $mahasiswa->nama . '.' . $extension;
+        } else {
+            $mahasiswa->image_profile = 'default.png';
+        }
         $mahasiswa->save();
 
         $kelas = new Kelas;
-        $kelas->id = $request->get('kelas');
+        $kelas->id = $request->input('kelas');
 
         //fungsi eloquent untuk menambah data dengan relasi belongsTo
         $mahasiswa->kelas()->associate($kelas);
@@ -123,10 +131,17 @@ class MahasiswaController extends Controller
         $mahasiswa->no_handphone = $request->get('no_handphone');
         $mahasiswa->email = $request->get('email');
         $mahasiswa->tanggal_lahir = $request->get('tanggal_lahir');
+        if ($request->hasFile('Foto')) {
+            $extension = $request->file('Foto')->getClientOriginalExtension();
+            $request->file('Foto')->move('storage/images/', $mahasiswa->nama . '.' . $extension);
+            $mahasiswa->image_profile = $mahasiswa->nama . '.' . $extension;
+        } else {
+            $mahasiswa->image_profile = 'default.png';
+        }
         $mahasiswa->save();
 
         $kelas = new Kelas;
-        $kelas->id = $request->get('kelas');
+        $kelas->id = $request->input('kelas');
 
         //fungsi eloquent untuk mengupdate data dengan relasi belongsTo
         $mahasiswa->kelas()->associate($kelas);
@@ -140,12 +155,15 @@ class MahasiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($nim)
+    public function destroy(Mahasiswa $mahasiswa)
     {
-        //fungsi eloquent untuk menghapus data
-        Mahasiswa::find($nim)->delete();
-        return redirect()->route('mahasiswas.index')
-            ->with('success', 'Mahasiswa Berhasil Dihapus');
+        //delete image profile mahasiswa
+        if ($mahasiswa->image_profile) {
+            unlink(public_path('storage/images/' . $mahasiswa->image_profile));
+        }
+
+        $mahasiswa->delete();
+        return redirect('mahasiswas')->with('success', 'Mahasiswa Berhasil Dihapus');
     }
 
     public function detailNilai($id)
