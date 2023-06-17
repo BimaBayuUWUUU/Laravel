@@ -32,4 +32,5 @@
 
     </table>
     <a href="{{ route('mahasiswas.index') }}" class="btn btn-primary">Kembali</a>
+    <a href="{{ route('mahasiswas.print', $mahasiswa->nim) }}" class="btn btn-danger float-right">Cetak PDF</a>
 @endsection
